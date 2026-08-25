@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css演示</title>
+</head>
+<body>
+    <!-- 
+        注意：css引入方式的优先级
+            行内样式 > 内部样式 & 外部样式 （谁后加载谁的优先级高） 
+        颜色表示：
+            关键字：预定义的颜色名称，比如：red，blue，green，black....
+            rgb表示法：红绿蓝的三原色表示法，rgb(值1，值2，值3) ，取值范围是0~255
+            16进制表示法：#值1值2值3，值1，值2，值3的范围是0~9，a~f
+
+    -->
+    
+    <!-- 行内样式 -->
+    <h1 style="color: red;">Hello CSS..1</h1>
+
+    <!-- 内部样式 -->
+    <style>
+        h1 {
+            /* color: blue; */
+            /* color: rgb(255, 0, 0); */
+            color: #00ff00;
+        }
+    </style>
+    <h1>Hello CSS..2</h1>
+
+    <!-- 外部样式 -->
+    <!-- <link rel="stylesheet" href="demo.css"> -->
+    <h1>Hello CSS..3</h1>
+    <h1>Hello CSS..4</h1>
+    <h1>Hello CSS..5</h1>
+</body>
+</body>
+</html>

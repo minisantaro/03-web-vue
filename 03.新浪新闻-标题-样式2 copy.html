@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新思想引领新征程</title>
+</head>
+<style>
+    /* 
+    css选择器的优先级：
+        id选择器 > 类选择器 > 元素选择器 （按范围来记，范围越大优先级越低）
+    */
+    
+    /* css选择器一：元素选择器 */
+    h1 {
+        color: #4E4F53;
+    }
+
+    span {
+        color: blue;
+    }
+
+    /* css选择器二：类选择器 */
+    .cls{
+        color: grey;
+        font-size: 10px; /* 设置字体大小,单位px 像素，就比如分辨率1024x768 */
+    }
+
+    /* css选择器三：id选择器 */
+    #timer{
+        color:red
+    }
+</style>
+
+
+<body>
+    <img src="./img/logo.png" alt="logo.png" width="100px"> 新浪政务>正文
+    <h1>新思想引领新征程</h1>
+    <hr>
+    <span class="cls" id="timer">2026年08月24日 14:00</span> <span>央视网</span>
+    <hr>
+</body>
+
+</html>
