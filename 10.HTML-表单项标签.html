@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-表单项标签</title>
+</head>
+<body>
+
+<!-- value: 表单项提交的值 -->
+<form action="" method="post">
+     姓名: <input type="text" name="name"> <br><br>
+     密码: <input type="password" name="password"> <br><br> 
+     <!-- 
+          radio代表的是单选的意思
+          下面的name是威了把两个性别来组成一组来用的，这样radio就可以单选
+          name 只要一样 男女的 gender就成为一组 那样的话就只能单选。
+          就是互斥的。
+       -->
+          <!-- 
+               label标签:表单项的文本标签
+               作用:点击文本标签也可以选中表单项
+          -->
+               <!-- 
+                    value属性:表单项提交的值
+                    因为这是单选的，所以value属性的值是唯一的，提交的时候就会提交value属性的值。
+                    基本上做选择的都要有value属性，提交的时候就会提交value属性的值。
+               -->
+     性别: <label><input type="radio" name="gender" value="1"> 男</label>
+          <label><input type="radio" name="gender" value="2"> 女 </label> <br><br>
+     爱好: <label><input type="checkbox" name="hobby" value="java"> java </label>
+          <label><input type="checkbox" name="hobby" value="game"> game </label>
+          <label><input type="checkbox" name="hobby" value="sing"> sing </label> <br><br>
+     图像: <input type="file" name="image">  <br><br>
+     生日: <input type="date" name="birthday"> <br><br>
+     时间: <input type="time" name="time"> <br><br>
+     日期时间: <input type="datetime-local" name="datetime"> <br><br>
+     邮箱: <input type="email" name="email"> <br><br>
+     年龄: <input type="number" name="age"> <br><br>
+     学历: <select name="degree">
+               <option value="">----------- 请选择 -----------</option>
+               <option value="1">大专</option>
+               <option value="2">本科</option>
+               <option value="3">硕士</option>
+               <option value="4">博士</option>
+          </select>  <br><br>
+     描述: <textarea name="description" cols="30" rows="10"></textarea>  <br><br>
+     <!-- 
+          隐藏域:隐藏表单项
+          作用:隐藏表单项，用户看不到，但是可以提交数据
+          需求:有些数据不希望用户看到，但是又需要提交数据，这时候就可以使用隐藏域
+      -->
+     <input type="hidden" name="id" value="1">
+
+     <!-- 表单常见按钮 -->
+     <input type="button" value="按钮">
+     <input type="reset" value="重置"> 
+     <input type="submit" value="提交">   
+     <br>
+</form>
+
+</body>
+</html>
