@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-String</title>
+</head>
+
+<body>
+
+
+    <script>
+        //1. 创建字符串
+        //let str = new String('Hello String');
+        let str = 'Hello String';
+        console.log(str);
+
+        //2. 字符串属性 - length
+        let len = str.length;
+        console.log("长度："+len);
+
+        //3. 字符串方法 - charAt , indexOf , trim , substring
+        //charAt 获取指定索引位置的字符
+        let c = str.charAt(6);
+        console.log(c);
+
+        //indexOf 获取指定字符的第一个索引位置
+        //需求：获取llo的索引位置
+        console.log(str.indexOf('llo')); // 2
+
+        // trim: 去除两边空格
+        // let str2 = '  Hello  World    ';
+        // console.log(str2);
+        // console.log("长度"+str2.length);
+        // console.log(str2.trim());
+
+        // substring: 截取指定位置字符  --包左不包右
+        // 需求：截取出llo
+        console.log(str.substring(2, 5));
+
+    </script>
+</body>
+
+</html>

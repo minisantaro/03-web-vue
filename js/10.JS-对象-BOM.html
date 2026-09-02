@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-BOM</title>
+</head>
+
+<body>
+    <script>
+        // Window窗口对象
+
+        // 方法演示 alert
+        // window.alert("Hello Window....");
+        // alert("Hello Window....222");
+
+        // confirm --确认提示框，点击确认返回true, 点击取消返回false
+        // let flag = confirm("您确认要删除吗？");
+        // console.log(flag);
+
+        // setInterval --周期性的定时器, 参数1代表要触发的函数【会触发多次】，参数2代表时间，单位是ms
+        let i = 0;
+        setInterval(() => {
+            i++;
+            console.log("定时器执行"+i+"次");
+        }, 1000);
+
+        // setTimeout --延迟定时器，只会触发一次
+        setTimeout(() => {
+            console.log("3秒时间到！");
+        }, 3000);
+        
+        // Location地址栏对象
+        // window.location
+        alert(location.href);
+        // 设置url地址--页面会自动跳转
+        location.href = "https://www.itcast.cn";
+
+    </script>
+</body>
+</html>

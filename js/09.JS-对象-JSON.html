@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-JSON</title>
+</head>
+
+<body>
+
+
+    <script>
+        //1. 自定义JS对象
+        let user = {
+            name: 'Tom',
+            age: 18,
+            gender: '男',
+            // sing: function(){
+            //     console.log("大河向东流~~~");
+            // }
+            sing(){
+                console.log("大河向东流~~~"); 
+            }
+        }
+        //调用对象的属性和方法
+        console.log(`我是${user.name}，今年${user.age}岁`);
+        user.sing();
+
+        //2. JSON对象
+        let jsonStr = '{"name": "Tom", "age": 18, "address": ["深圳","广州","东莞"]}';
+        // console.log(jsonStr.name);
+        // JSON字符串---》JS对象  
+        let jsObj = JSON.parse(jsonStr);
+        console.log(jsObj.name +":"+ jsObj.age);
+        // JS对象 ----》JSON字符串
+        console.log(jsObj);
+        let jsonStr2 = JSON.stringify(jsObj);
+        console.log(jsonStr2);
+
+    </script>
+</body>
+
+</html>

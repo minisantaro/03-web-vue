@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        您好, 支付完成, <span id="time">5</span> 秒之后将自动跳转至 <a href="https://www.jd.com">官网</a> 首页 ~
+    </div>
+
+    <script>
+        // 需求：进行时间倒计时，倒计时结束后，自动跳转到官网首页
+        // 分析：DOM操作、周期性的定时器setInterval、location的地址修改
+        // 1.获取dom元素对象
+        let span = document.querySelector("#time");
+        let timeValue = span.innerHTML;
+        // 每过一秒钟就需要将时间减一, 
+        setInterval(() => {
+            // 2.操作元素内容
+            timeValue--;
+            if(timeValue <= 0) {    //当时间到0的时候，就跳转
+                //进行页面跳转
+                location.href = "https://www.jd.com";
+            }
+            span.innerHTML = timeValue;
+        }, 1000);
+    </script>
+</body>
+
+</html>

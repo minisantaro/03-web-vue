@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+<body>
+    
+    <script>
+        // 正则表达式
+        // let reg1 = /abc/;
+        // let reg2 = new RegExp('123');
+
+        // test方法，用来校验字符串是否符合格则
+        // let flag = reg1.test("aaaaaaa");   //false
+        // alert(flag);
+        // flag = reg1.test("aaabccc");  //true
+        // alert(flag);
+
+        // 需求1：校验用户名（4~16位）
+        let reg = /\w{4,16}/;
+        // alert(reg.test("abc"));         //false
+        // alert(reg.test("abcddd"));  //true
+        // alert(reg.test("123abc"));  //true
+
+        // 需求2：校验手机号(11位、纯数字、1开头、第二位是3-9，后面再加9位纯数字)
+        let regPhone = /^1[3-9]\d{9}$/;
+        alert(regPhone.test("110110"))
+        alert(regPhone.test("11011011111"))
+        alert(regPhone.test("12011011111"))
+        alert(regPhone.test("13011011111"))   //true
+        alert(regPhone.test("19011011111"))   //true
+        alert(regPhone.test("1901101a111"))
+
+
+    </script>
+</body>
+</html>
