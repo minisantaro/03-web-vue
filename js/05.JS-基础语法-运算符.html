@@ -15,39 +15,57 @@
         let _age = '20';
         let $age = 20;
 
-        // alert(age == _age);     //true
-        // alert(age === _age);    //false
-        // alert(age === $age);    //true
+        alert(age == _age);     //true 值一样
+        alert(age === _age);    //false 类型不一样
+        alert(age === $age);    //true 类型和值一模一样
 
         //类型转换 - 字符串 <-> 数字
-        // alert(typeof ('10' - 1));   //number
-        // alert(typeof ('10' + 1));   //string
-        // alert(parseInt('123'));     //123
-        // alert(parseInt('12A3'));    //12 
-        // alert(parseInt('A123'));    //NaN
+        alert(typeof ('10' - 1));   //number
+        alert(typeof ('10' + 1));   //string
+        alert(parseInt('123'));     //123
+        alert(parseInt('12A3'));    //12 parseInt() 会从字符串的开头开始，把能识别的整数部分转换出来；遇到不能识别的字符就停止。
+        /*
+        - 1 是数字，继续
+        - 2 是数字，继续
+        - A 不是数字，停止
+        - 所以结果是 12
+        后面的 3 不会再继续解析。
+        */
+
+        alert(parseInt('A123'));    
+        //NaN因为 parseInt() 必须从字符串第一个字符开始解析整数。
+        // 'A123' 的第一个字符是 A，不是数字，所以一个数字都没有解析出来，
+        // 结果就是 NaN，意思是“不是一个数字”。
 
         // 类型转换 - 其他类型转为boolean
-        // if(0){
-        //     alert("0 转换为false");
-        // }
-        // if(NaN){
-        //     alert("NaN 转换为false");
-        // }
-        // if(1){
-        //     alert("除0和NaN其他数字都转为 true");
-        // }
+        /*
+        number: 0 和 NaN为false，其他均转位true。
+        string：空字符串（‘’）为false，其他均转位true。
+        null 和 undefiend：均转为false
+        */
 
-        // if(""){ //空字符串--什么字符都没有
-        //     alert("空字符串为 false, 其他都是true");
-        // }
-        // if(" "){ //有一个空格字符
-        //     alert("空字符串为 false, 其他都是true----1");
-        // }
 
-        if(null){
+        if(0){
+            alert("0 转换为false");
+        }
+        if(NaN){
+            alert("NaN 转换为false");
+        }
+        if(1){
+            alert("除0和NaN其他数字都转为 true");
+        }
+
+        if(""){ //空字符串--什么字符都没有
+            alert("空字符串为 false, 其他都是true");
+        }
+        if(" "){ //有一个空格字符
+            alert("空字符串为 false, 其他都是true----1");
+        }
+
+        if (null) {
             alert("null 转化为false");
         }
-        if(undefined){
+        if (undefined) {
             alert("undefined 转化为false");
         }
     </script>

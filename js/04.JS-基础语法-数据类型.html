@@ -9,29 +9,39 @@
 </head>
 
 <body>
+    <!-- 
+        js里的数据类型：
+            number：数字（整数，小数，NaN（Not a Number）
+            boolean:布尔。true,false
+            null:对象为空。JavaScript是大小写敏感的，因此null,Null,NULL是完全不同的。
+            undefined:当声明的变量未初始化时，该变量的默认值是 undefined
+            string:字符串，单引号，双引号，反引号皆可，推荐使用单引号
+    -->
     <script>
+        // 使用typeof运算可以获取数据类型
+        let a = 10;
+        alert(typeof a) //number
 
-        //原始数据类型
-        // alert(typeof 3);        //number 
-        // alert(typeof 3.14);     //number
+        alert(typeof "a") // string 双引号
+        alert(typeof 'Hello') // string 单引号
+        alert(typeof `Hello JS`) // string 反引号
 
-        // alert(typeof "A");      //string
-        // alert(typeof 'Hello');  //string
-        // alert(typeof `Hello JS`);//string
+        alert(typeof true) // boolean
+        alert(typeof false) // boolean
 
-        // alert(typeof true);     //boolean
-        // alert(typeof false);    //boolean
+        alert(typeof null) // object 是一个空对象 空对象的占位符
 
-        // alert(typeof null);     //object
+        let b 
+        alert(typeof b) // undefine
 
-        // let a;
-        // alert(typeof a);        //undefined
-
-        // 反引号的应用场景：拼接字符串
-        let name = 'zhangsan';
+        // 反引号的应用场景 拼接字符串
+        let name = '张三';
         let age = 18;
-        console.log('我是'+name+', 今年刚满' + age +'了');
-        console.log(`我是${name}, 今年刚满${age}了`);
+        console.log('我是' + name + '今年刚满' + age + '了' );
+        console.log(`我是${name}今年刚满${age}了`)
+        
+
+        
 
     </script>
 </body>
