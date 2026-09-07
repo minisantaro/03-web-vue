@@ -10,33 +10,68 @@
 
 <body>
     <script>
-        // Window窗口对象
+        // BOM概念：浏览器对象概念（browser object model），允许JS与浏览器对话，JS将浏览器的各个组成部分封装为对象。
+        // 组成：
+        //      1. window对象：浏览器窗口对象。
+        //      2. navigator对象：浏览器对象。
+        //      3. screen对象：屏幕对象。
+        //      4. history对象：浏览器历史记录对象。 (比如往前退一步，往前进一步)
+        //      5. location对象：浏览器地址栏对象。（地址栏，存在地址栏）
 
-        // 方法演示 alert
-        // window.alert("Hello Window....");
-        // alert("Hello Window....222");
+        // 重点掌握 window 和 location 对象
 
-        // confirm --确认提示框，点击确认返回true, 点击取消返回false
-        // let flag = confirm("您确认要删除吗？");
-        // console.log(flag);
+        // 1. window对象
+        // 介绍：浏览器窗口对象。
+        // 获取：直接使用window，其中window可以省略
 
-        // setInterval --周期性的定时器, 参数1代表要触发的函数【会触发多次】，参数2代表时间，单位是ms
+        // 属性：
+        // history：对 History 对象的只读引用。
+        // location：用于窗口或框架的Location对象。
+
+        // 重点掌握下面的方法：
+        // alert()：显示一个带有一条消息和一个确定按钮的警告框。
+        // confirm()：显示一个带有一条消息和确定按钮、取消按钮的对话框。
+
+        // 下面两个是定时器，每隔一个时间段执行一次，或者延迟一段时间执行一次
+        // senInterval()：按照指定的周期（以毫秒计）来调用函数或计算表达式。
+        // setTimeout()：在指定的毫秒数后调用函数或计算表达式
+        
+        // window窗口对象
+
+        // 方法演示1 alert
+        // window.alert('这是一个警告框111');
+        // 这个window 也可以省略的
+        // alert('这是一个警告框222');
+
+        // confirm -- 确认提示框
+        let flag = confirm('您确认要删除吗？');
+        // 会有 确认 和 取消 两个按钮，返回布尔值，点击确认返回true，点击取消返回false
+        console.log(flag);
+
+        // setInterval --周期性的定时器,参数1代表要出发的函数「会触发多次」，参数2代表时间间隔，单位毫秒
         let i = 0;
         setInterval(() => {
             i++;
-            console.log("定时器执行"+i+"次");
-        }, 1000);
+            console.log('定时器执行' + i + '次');
+        }, 1000);// 1000毫秒 = 1秒 每隔一秒钟做一个事情
 
-        // setTimeout --延迟定时器，只会触发一次
+        // setTimeout --延迟性的定时器,参数1代表要出发的函数「只会触发一次」，参数2代表时间间隔，单位毫秒
         setTimeout(() => {
-            console.log("3秒时间到！");
-        }, 3000);
-        
-        // Location地址栏对象
-        // window.location
+            console.log('3秒时间到s');
+        }, 3000);// 3000毫秒 = 3秒 延迟三秒钟做一个事情
+
+        // 2. location地址栏对象
+        // 介绍：浏览器地址栏对象。
+        // 获取：使用 window.location 获取，其中 window.可以省略
+        // 属性：
+        // href：设置或返回完整的URL。
+        // 设置完之后，页面会跳转到设置的地址
+        // window.location 
         alert(location.href);
-        // 设置url地址--页面会自动跳转
-        location.href = "https://www.itcast.cn";
+        // 设置url地址 --页面会自动跳转
+        location.href = 'https://www.baidu.com';
+        
+
 
     </script>
 </body>

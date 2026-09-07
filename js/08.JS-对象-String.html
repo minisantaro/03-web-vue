@@ -12,34 +12,32 @@
 
 
     <script>
-        //1. 创建字符串
-        //let str = new String('Hello String');
-        let str = 'Hello String';
-        console.log(str);
+        // 1.创建字符串
+        let str = new String('hello world');
+        let str2 = 'hello world';
 
-        //2. 字符串属性 - length
-        let len = str.length;
-        console.log("长度："+len);
+        // 2.字符串属性 - length
+        console.log(str.length);
 
-        //3. 字符串方法 - charAt , indexOf , trim , substring
-        //charAt 获取指定索引位置的字符
-        let c = str.charAt(6);
+        // 3.字符串方法 - charAt, indexOf, trim , substring 
+        // charAt 获取指定索引位置的自负
+        let c = str.charAt(6); 
         console.log(c);
 
-        //indexOf 获取指定字符的第一个索引位置
-        //需求：获取llo的索引位置
-        console.log(str.indexOf('llo')); // 2
-
-        // trim: 去除两边空格
-        // let str2 = '  Hello  World    ';
-        // console.log(str2);
-        // console.log("长度"+str2.length);
-        // console.log(str2.trim());
-
-        // substring: 截取指定位置字符  --包左不包右
-        // 需求：截取出llo
-        console.log(str.substring(2, 5));
-
+        // indexOf 获取指定字符在字符串中首次出现的索引位置
+        // 需求：获取llo的索引位置
+        let index = str.indexOf('llo');
+        console.log(index);
+        
+        // trim 去除两边空格
+        let str3 = '   hello world   ';
+        console.log(str3);
+        console.log(str3.length);
+        console.log(str3.trim());
+        
+        // substring ：截取指定位置字符 --包左不包右
+        console.log(str.substring(0, 5)); // hello
+        
     </script>
 </body>
 

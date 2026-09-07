@@ -14,20 +14,21 @@
     <span class="txt">DOM元素3</span><br>
 
     <script>
-        // 通过document对象获取元素对象
-        // 1.通过css选择器获取单个元素对象--如果存在多个，只返回第一个
-        let s1 = document.querySelector('#sid');
-        // alert(s1);
-        // 需求：将 DOM元素1 修改成 Hello Dom
-        // alert(s1.innerHTML);
-        s1.innerHTML = 'Hello Dom';
-
+        // 通过document对象获取元素对象 最关键的就是怎么来获取元素对象
+        // 1.通过css选择器获取单个元素对象-- 如果存在多个，只返回第一个。
+        let s1 = document.querySelector('#sid')
+        // alert(s1)
+        // 需求：讲DOM元素1 修改成 Hello DOM1
+        // 去w3cschool来找参考书 获取的对象是span 然后去找哪个属性和方法能改文本内容
+        console.log(s1.innerHTML = 'Hello DOM1');
+        
         // 2.通过css选择器获取所有元素对象
-        let s2 = document.querySelectorAll('.txt');
-        // alert(s2);
-        s2.forEach((s)=>{
-            s.innerHTML = 'Hello DOM';
-        })
+        let s2 = document.querySelectorAll('.txt') //Nodelist是一个数组
+        // 由于是数组形式 可以用 forEach 遍历来获取
+        s2.forEach(element => {
+            element.innerHTML = "Hello DOM2"
+        });
+
     </script>
 </body>
 

@@ -12,32 +12,41 @@
 
 
     <script>
-        //1. 自定义JS对象
-        let user = {
-            name: 'Tom',
-            age: 18,
-            gender: '男',
-            // sing: function(){
-            //     console.log("大河向东流~~~");
-            // }
-            sing(){
-                console.log("大河向东流~~~"); 
+        // 1.自定义JS对象 
+        let obj = { // let 对象名
+            name: '张三', // 属性名:属性值
+            age: 20 ,
+            eat: function () { // 方法名:方法体
+                console.log('吃饭');
             }
-        }
-        //调用对象的属性和方法
-        console.log(`我是${user.name}，今年${user.age}岁`);
-        user.sing();
+        };
+        // 调用对象的属性和方法
+        console.log(`我是${obj.name}，今年${obj.age}岁`);
+        obj.eat();
 
-        //2. JSON对象
-        let jsonStr = '{"name": "Tom", "age": 18, "address": ["深圳","广州","东莞"]}';
-        // console.log(jsonStr.name);
-        // JSON字符串---》JS对象  
-        let jsObj = JSON.parse(jsonStr);
-        console.log(jsObj.name +":"+ jsObj.age);
-        // JS对象 ----》JSON字符串
-        console.log(jsObj);
-        let jsonStr2 = JSON.stringify(jsObj);
+        // 2. JSON对象
+        // 概念：JSON（JavaScript Object Notation），JavaScript对象标记法。
+        // JSON是通过JavaScript对象标记法书写的文本。
+        // 为什么要学Json 因为用他来做数据传输 请求 响应
+        // 其实就是记录标记一个对象，本质就是一个字符串。所有的key都要加双引号。(单引号不可以)
+        
+        // JSON的定义
+        // 格式：let 变量名 = '{"key1": "value1", "key2": "value2"}';  // JSON对象是一个字符串
+        // value 数据类型为：字符串、数字、布尔值、数组、对象、null
+
+        // 定义JSON对象
+        let jsonStr = '{"name": "张三", "age": 20, "address": ["北京市", "上海市"]}'; // 外面建议单引号，里面是双引号,不要换行
+        console.log(jsonStr.name);
+        
+        // JSON字符串==》JS对象的方法。
+        let jsObj = JSON.parse(jsonStr); // JSON.parse() 方法将一个 JSON 字符串转换为 JavaScript 对象。
+        console.log(jsObj.name);
+        console.log(jsObj.address[0]);
+        // JS对象==》JSON字符串的方法。
+        let jsonStr2 = JSON.stringify(jsObj); // JSON.stringify() 方法将一个 Java
         console.log(jsonStr2);
+        
+
 
     </script>
 </body>
