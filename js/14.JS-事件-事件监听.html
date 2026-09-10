@@ -13,13 +13,10 @@
             比如，按钮被点击，鼠标移动到元素上，按下键盘按键。
         
         事件监听：JavaScript可以在事件触发时，就立即调用一个函数作出响应，也称为 事件绑定 或 注册事件。
-    
     -->
-    
     <!-- 
         语法：
             事件源：addEventListener('事件类型',事件触发执行的函数s);
-
         事件监听三要素
             事件源：哪个DOM元素出发了事件，要获取DOM元素
             事件类型：用什么方式出发，比如：鼠标单击click，鼠标经过 mouseover
@@ -30,25 +27,25 @@
     <input type="button" id="btn2" value="点我一下试试2">
 
     <script>
-        // 1.事件监听【推荐】--可以绑定多个事件
-        document.querySelector("#btn1").addEventListener('click', function(){
-            alert("试试就试试1~~");
+        // 1. 事件监听。【推荐】-- 可以绑定多个事件。
+        // 首先要获取DOM元素
+        document.querySelector('#btn1').addEventListener('click',function(){
+            alert('试试就试试1')
+        })
+        document.querySelector('#btn1').addEventListener('click',function(){
+            alert('试试就试试11111')
         })
 
-        document.querySelector("#btn1").addEventListener('click', function(){
-            alert("试试就试试11111111~~");
-        })
 
-        // 2.事件监听（早期版本）--调用事件属性---只能绑定一次，后面的会覆盖前面
-        document.querySelector("#btn2").onclick = () => {
-            alert("试试就试试2");
+        // 早期版本写法；事件源.on事件（早期版本）--调用事件属性--只能绑定一次，后面的会覆盖前面的。
+        document.querySelector('#btn2').onclick = function(){
+            alert('试试就试试2')
         }
-        document.querySelector("#btn2").onclick = () => {
-            alert("试试就试试2222222");
+        document.querySelector('#btn2').onclick = function(){
+            alert('试试就试试22222')
         }
 
-
-
+        // 区别：on方式会被覆盖，addEventListener方式可以绑定多次，拥有更多特性，推荐使用。
     </script>
 </body>
 

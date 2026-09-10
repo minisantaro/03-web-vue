@@ -7,7 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS-事件-常见事件</title>
 </head>
+<!-- 
+    常见事件：
+        鼠标事件：
+            click：点击
+            mouseenter：鼠标移入
+            mouseleave：鼠标移出
+        
+        键盘时间：
+            keydown：键盘按下触发
+            keyup：键盘抬起触发
+        
+        焦点事件：比如说一个输入框，点击之后就有一个竖线在那里闪，点别的地方就离焦了。 
+            focus：获得焦点触发
+            blur：失去焦点触发
+        
+        表单事件：
+            input：用户输入时触发
+            submit：用户提交时触发
 
+-->
 <body>
     <form action="" style="text-align: center;">
         <input type="text" name="username" id="username">
@@ -42,6 +61,8 @@
 
 
     <script>
+        // 通过搜索里面的绑定的id来查看是什么事件。
+        // 早期的话 有conclick onblur这种方式来写。
         //click: 鼠标点击事件
         document.querySelector('#b2').addEventListener('click', () => {
             console.log("我被点击了...");

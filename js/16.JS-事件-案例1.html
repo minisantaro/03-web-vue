@@ -105,25 +105,29 @@
     <script>
         // 需求：实现表格隔行换色效果
         // 分析：事件--鼠标移入、移出事件，DOM操作tr元素，添加样式  style="background-color: antiquewhite;"
-        // 1.获取dom元素
-        let trs = document.querySelectorAll(".data");
+        // 1.获取DOM元素
+        let trs = document.querySelectorAll('.data');
+        // 2.操作元素属性 -- 奇数行设置 #FBFBD4 ，偶数行设置 D9D9FA
+        // 鼠标移入事件
         for (let i = 0; i < trs.length; i++) {
             const tr = trs[i];
-             // 2.操作元素属性 --奇数行设置 #FBFBD4 ,偶数行设置#D9D9FA
-             // 鼠标移入事件
-             tr.addEventListener('mouseenter', ()=>{
-                if(i % 2 == 0) {
-                    tr.style = "background-color: #FBFBD4;"
-                }else{
-                    tr.style = "background-color: #D9D9FA;"
-                }
-            })
 
-            // 鼠标移出事件
-            tr.addEventListener('mouseleave', ()=>{
-                tr.style = "background-color: #FFF;"
-            })
+            tr.addEventListener('mouseenter', function () {
+                if (i % 2 === 0) {
+                    tr.style = 'background-color:#FBFBD4';
+                } else {
+                    tr.style = 'background-color:#D9D9FA';
+                }
+            });
+            // 鼠标移出事件 就不需要判断了
+            tr.addEventListener('mouseleave', function () {
+                this.style.backgroundColor = '';
+            });
         }
+
+
+
+
     </script>
 </body>
 
