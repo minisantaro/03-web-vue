@@ -59,37 +59,52 @@
         // 其实是input输入值之后，赋值给的是里面的value属性
         let input = document.querySelector('#username');
         
-        input.addEventListener('blur', ()=>{
+        let checkUsername =  ()=>{
+            let flag = true;
             let usernameValue = input.value;
             // alert(usernameValue);　测试代码
             // 校验用户名的长度
             if(usernameValue.length < 4 || usernameValue.length > 16){
-                 document.querySelector('#name_msg').innerHTML = "用户名不合法！";
+                document.querySelector('#name_msg').innerHTML = "用户名不合法！";
+                flag = false;
             }else{
                 document.querySelector('#name_msg').innerHTML = "";
-            }
-        })
+            }       
+            return flag; 
+        }
 
-        
+        input.addEventListener('blur',checkUsername);
         
 
         // 2.校验手机号
         let inputPhone = document.querySelector('#phone');
-        inputPhone.addEventListener('blur', ()=>{
+        let checkPhone = ()=>{
             let phoneValue = inputPhone.value;
+            let flag = true;
             // alert(phoneValue); 测试代码
             // 校验用户名的长度 
             // value：获取表单输入框的值，如 input、textarea。
             // innerHTML：获取普通标签内部的 HTML 内容，如 div、p,span。
             if(phoneValue.length !== 11){
                 document.querySelector('#phone_msg').innerHTML = "手机号不合法！";
+                flag = false;
             }else{
                 document.querySelector('#phone_msg').innerHTML = "";
             }
-        })
+            return flag;
+        }
+        inputPhone.addEventListener('blur', checkPhone);
 
         // 3.表单提交时，需要校验整个表单是否合法，如果不合法不让提交
-
+        // 应该获取的是整个表单 直接用元素选择器
+        document.querySelector('form').addEventListener('submit', (event)=>{
+            // 调用函数需要把括号给带上。
+            if(!checkUsername() || !checkPhone()){
+                alert("用户名或手机不合法！！！请重新输入！")
+                // 阻止表单提交
+                event.preventDefault();
+            }  
+        })
 
     </script>
 </body>
